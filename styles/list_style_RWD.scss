@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//使icon不會被點擊到
+i{
+    pointer-events: none;
+}
+
+body{
+    background: linear-gradient(90deg,#1D6A96,#85B8Cb);
+}
+
+header{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color:#D1DDDB;
+        font-size: 3rem;
+    }
+}
+
+form{
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;//影響RWD排版重要
+    
+
+    input,button{
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+        margin:0.1rem;
+    }
+
+    input.event{
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    input[type="number"]{
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 100px;
+        text-align: center;
+    }
+
+    // 隱藏日期的上下箭頭
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    button{
+        cursor: pointer;
+        background-color: #283B42;
+        color: #D1DDDB;
+    }
+}
+
+section{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    align-content:center;
+    //scaleUP動畫效果
+    transition: all 0.1s ease;
+
+
+    div.todo{
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        
+
+        // align-items:center;//會導致文字與時間底色大小不依
+        margin: 5px;
+        
+
+        p{
+            background-color:  #ffffff;
+            color: #283B42;
+            padding: 0.25rem 0.5rem;
+            font-size: 1.75rem;
+        }
+
+        p.todo-text{
+            width: 65%;
+        }
+
+        p.todo-time{
+            width: 35%;            
+        }
+
+        // icon的button
+        button{
+            padding: 0.25rem 0.5rem;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            color:#ffffff;
+        }
+
+        button.complete{
+            width: 50%;
+            background-color: #5ab583;
+        }
+
+        button.delete{
+            width: 50%;
+            background-color: #ec6d6d;
+        }
+      
+    }
+}
+
+//由js事件加在div上
+.done{
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2rem;
+}
+
+div.sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0rem;
+
+    button{
+        cursor: pointer;
+        background-color: #283B42;
+        color: #D1DDDB;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+    }
+}
+
+
+// scale()二維平面縮放，形成彈跳出的效果
+@keyframes scaleUp{
+    from{
+        transform:scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown{
+    to{
+        transform: scale(0);
+    }
+}
+
+@media screen and (max-width: 360px){
+    body{
+        background-repeat: no-repeat;
+    }
+}
+

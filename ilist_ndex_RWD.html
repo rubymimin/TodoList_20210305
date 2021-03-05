@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./list_style_RWD.css">
+</head>
+<body>
+    <header>
+        <h1>ToDo List</h1>
+    </header>
+    <form>
+        <!-- required:必填 -->
+        <input class="event" type="text" placeholder="事項" required>
+        <input class="date" type="number" min="2021" max="2050" placeholder="年" required>
+        <input class="date" type="number" min="1" max="12" placeholder="月" required>
+        <input class="date" type="number" min="1" max="31" placeholder="日" required>
+        <button type="submit" class="plus">新增至清單</button>
+
+    </form>
+
+    <div class="sort">
+        <button>依時間排序</button>
+    </div>
+
+    <!-- 放置清單列表處 -->
+    <section></section>
+
+</body>
+<script src="./list_RWD.js"></script>
+</html>
